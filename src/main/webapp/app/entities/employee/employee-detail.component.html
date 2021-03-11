@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span jhiTranslate="appliveApp.employee.detail.title">Employee</span> {{ employee.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appliveApp.employee.firstName" [ngbTooltip]="'appliveApp.employee.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{ employee.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appliveApp.employee.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ employee.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appliveApp.employee.email">Email</span></dt>
+                <dd>
+                    <span>{{ employee.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="appliveApp.employee.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ employee.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appliveApp.employee.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ employee.hireDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appliveApp.employee.salary">Salary</span></dt>
+                <dd>
+                    <span>{{ employee.salary }}</span>
+                </dd>
+                <dt><span jhiTranslate="appliveApp.employee.commissionPct">Commission Pct</span></dt>
+                <dd>
+                    <span>{{ employee.commissionPct }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
